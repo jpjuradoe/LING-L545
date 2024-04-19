@@ -25,3 +25,9 @@ for sentence in open('original.test.txt', 'r'):
                 print(' '.join(maxmatch(sentence, dictionary)), end='')
 
 ```
+## References
+
+<a id="1">[1]</a> 
+Marshall, I. (1983). 
+Choice of Grammatical Word-Class without Global Syntactic Analysis: Tagging Words in the LOB Corpus.
+Computers and the Humanities, 17(3), 139–150. http://www.jstor.org/stable/30204076
