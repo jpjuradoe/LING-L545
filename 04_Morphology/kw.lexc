@@ -1,0 +1,116 @@
+Multichar_Symbols
+
+%>		! Morpheme boundary
+%<n%>		! Noun
+%<pl%>		! Plural
+%<sg1%>		! 1 person sg
+%<sg2%>		! 2 person sg
+%<sg3%>		! 3 person sg
+%<pl1_i%>	! 1 person pl inclusive
+%<pl1_e%>	! 1 person pl exclusive
+%<pl1%>		! 1 person pl
+%<pl3%>		! 3 person pl
+%<nom%>		! Nominative
+%<acc%>		! Accusative
+%<inst%>	! Instrumental
+%<ab%>		! Abessive
+%<dat%>		! Dative/Benefactive
+%<gen%>		! Genitive 
+%<caus%>	! Causative
+%<loc%>		! Locative
+%<dir%>		! Directional
+%<inc%>		! Inclusive
+%<term%>	! Terminative
+%<tran%>	! Transitive
+%<abl%>		! Ablative
+%<comit%>	! Comitative
+%<imm%>		! Immeditate
+%<intr%>	! Intrative
+%<exc%>		! Exclusive
+%<comp%>	! Comparative
+%<der_v%>       ! transforms a noun into a verb meaning
+%<v%>		! Verb
+%{k%}
+%{rin%}
+%{nin%}
+
+LEXICON Root
+Nouns ;
+
+LEXICON N
+%<n%>: POSS ;
+%<n%>: PL ;
+%<n%>: CASE ;
+#;
+
+LEXICON POSS
+%<sg1%>:%>y PL ;
+%<sg1%>:%>y CASE ;
+%<sg2%>:%>yki PL ;
+%<sg2%>:%>yki CASE ;
+%<sg3%>:%>n PL ;
+%<sg3%>:%>n CASE ;
+%<pl1_i%>:%>nchik PL ;
+%<pl1_i%>:%>nchik CASE ;
+%<pl1_e%>:%>yku PL ;
+%<pl1_e%>:%>yku CASE ;
+%<pl2%>:%>ykichik PL ;
+%<pl2%>:%>ykichik CASE ;
+%<pl3%>:%>nku PL ;
+%<pl3%>:%>nku CASE ;
+#;
+
+LEXICON PL
+%<pl%>:%>kuna CASE ;
+# ;
+
+LEXICON CASE
+%<nom%>: # ;
+%<acc%>:%>%{k%}ta # ;
+%<inst%>:%>wan # ;
+%<ab%>:%>naq # ;
+%<dat%>:%>paq # ;
+%<gen%>:%>pa # ;
+%<caus%>:%>rayku # ;
+%<loc%>:%>pi # ;
+%<dir%>:%>man # ;
+%<inc%>:%>piwan # ;
+%<term%>:%>kama # ;
+%<tran%>:%>%{rin%}ta # ;
+%<abl%>:%>piqta # ;
+%<comit%>:%>%{nin%}tin # ;
+%<imm%>:%>raq # ;
+%<intr%>:%>pura # ;
+%<exc%>:%>llam # ;
+%<comp%>:%>naw # ;
+# ;
+
+LEXICON DER_V
+%<der_v%>:%>chay V ; ! to x
+
+LEXICON V
+%<v%>: # ;
+
+LEXICON Nouns
+wasi:wasi N ; ! house
+warmi:warmi N ;	! woman
+qhari:qhari N ; ! man
+irqi:irqi N ; ! child
+mama:mama N ; ! mother
+tayta:tayta N ; ! father
+uywa:uywa N ; ! animal
+sacha:sacha N ; ! tree
+waska:waska N ; ! rope
+runtu:runtu N ; ! egg
+chukcha:chukcha N ; ! hair
+chaki:chaki N ; ! foot
+qucha:qucha N ; ! lake
+yaku:yaku N ; ! water
+inti:inti N ; ! sun
+killa:killa N ; ! moon
+tanta:tanta N ; ! bread
+chanka:chanka N ; ! leg
+kiru:kiru N ; ! tooth
+runa:runa N ; ! human being
+tanta:tanta DER_V; ! to make bread
+wasi:wasi DER_V ; ! to built a house

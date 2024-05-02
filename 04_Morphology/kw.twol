@@ -1,0 +1,30 @@
+Alphabet
+
+A I U CH H K L LL M N Ñ P Q R S T U W Y
+
+a i u ch h k l ll m n ñ p q r s t u w y
+
+%{rin%}:n
+%{rin%}:rin
+%{nin%}:n
+%{nin%}:nin
+%{k%}:0
+;
+
+Sets
+Vow = a i u
+A I U ;
+
+Rules
+
+"Remove the morpheme boundary"
+%>:0 <=> _ ;
+
+"Surface [n] in transitive affix after a vowel"
+%{rin%}:n <=> Vow: %>: _ ;
+
+"Surface [n] in comitative affix after a vowel"
+%{nin%}:n <=> Vow: %>: _ ;
+
+"Surface [n] in transitive affix after a vowel"
+%{k%}:0 <=> Vow: %>: _ ;
