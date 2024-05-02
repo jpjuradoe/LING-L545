@@ -1,0 +1,79 @@
+DELIMITERS = "." ;
+
+LIST Prop = np ;
+LIST Adj = adj ;
+LIST Adv = adv ;
+LIST Cm = cm ;
+LIST Def = def ;
+LIST Det = det ;
+LIST N = n ;
+LIST CN = cnjadv ;
+LIST Pr = pr ;
+LIST Sp = sp ;
+LIST Pl = pl ;
+LIST V = vblex ;
+LIST Pres = pres ;
+LIST Sg = sg ;
+LIST Past = past ;
+LIST PP = pp ;
+LIST Ant = ant ;
+LIST Lpar = lpar ;
+LIST Pprs = pprs ;
+LIST Subs = subs ;
+LIST Ger = ger ;
+LIST Abbr = abbr ;
+LIST Num = num ;
+LIST Rpar = rpar ;
+LIST Pron = prn ;
+LIST Itg = itg ;
+LIST Mf = mf ;
+LIST Rel = rel ;
+LIST An = an ;
+LIST P1 = p1 ;
+LIST P2 = p2 ;
+LIST Ind = ind ;
+
+LIST Unlike = "unlike" ;
+LIST Qnt = qnt ;
+LIST Sint = sint ;
+LIST Comp = comp ;
+LIST Sent = sent;
+LIST Cs = cs ;
+
+LIST By = "by" ;
+LIST Be = "be" ;
+LIST HAVE = "have" ;
+LIST I = "I" ;
+
+
+SECTION
+
+# Remove the adjective reading of "unlike" if it is 
+# followed by a proper noun
+REMOVE Adj IF (0 Unlike) (1 Prop) ; 
+  # ... unlike Livy ...
+
+#remove the past reading of "described" and "contradicted"
+REMOVE Past IF (NEGATE -1 Be BARRIER (*) - Adv) ;
+
+#select the qnt reading of "some" 
+REMOVE Adj IF (0 Adj) (1 Num) ;
+REMOVE Adv IF (0 Adv) (1 Num) ;
+REMOVE Pron IF (0 Pron) (1 Num) ;
+
+#remove the itg reading of "who"
+REMOVE Itg IF (-1 Cm) (0 Rel) ;
+
+#remove v reading of "writing"
+REMOVE V IF (NEGATE -1 Be BARRIER (*) - Adv) ;
+REMOVE N + Sg IF (-1 Be BARRIER (*) - Adv) ; 
+
+#remove the adj reading of contemporary
+REMOVE Adj IF (0 Adj) (-1 Adj) (1 Pr) ;
+
+#remove ger and subs reading of "(was) writing"
+REMOVE V + Ger IF (-1 Be) (0 Ger) ;
+REMOVE V + Subs IF (-1 Be) (0 Subs) ;
+
+#remove p1 reading of "was" if no I
+REMOVE P1 IF (0 P1) (NOT -1* I) ;
